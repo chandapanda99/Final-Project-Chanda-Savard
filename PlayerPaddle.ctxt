@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=x\ y
+comment0.target=PlayerPaddle(int,\ int)
+comment1.params=game
+comment1.target=void\ tick(Game)
+comment2.params=g
+comment2.target=void\ render(java.awt.Graphics)
+numComments=3
