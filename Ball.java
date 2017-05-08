@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Ball {
     int size = 40;
-    int speed = 30;
+    int speed = 1;
     int vx, vy;
     Random generator = new Random();
     int x = generator.nextInt(300) + 50;
@@ -59,7 +59,8 @@ public class Ball {
     }
 
     public void render(Graphics g) {
-        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        //g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        g.setColor(Color.RED);
         g.fillOval(x, y, size, size);
     }
 }

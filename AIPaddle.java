@@ -5,60 +5,61 @@ import java.util.*;
 
 public class AIPaddle 
 {
-	int x;
-	int y;
-	int width = 20;
-	int height = 100;
-	double speed = 35;
-	Random generator = new Random();
+    int x;
+    int y;
+    int width = 20;
+    int height = 100;
+    double speed = 25;
+    Random generator = new Random();
 
-	boolean isTwoPlayer = false;
+    boolean isTwoPlayer = false;
 
-	Rectangle boundingBox;
+    Rectangle boundingBox;
 
-	boolean goingUp = false;
-	boolean goingDown = false;
+    boolean goingUp = false;
+    boolean goingDown = false;
 
-	public AIPaddle(int x, int y) 
-	{
-		this.x = x;
-		this.y = y;
+    public AIPaddle(int x, int y) 
+    {
+        this.x = x;
+        this.y = y;
 
-		boundingBox = new Rectangle(x, y, width, height);
-		boundingBox.setBounds(x, y, width, height);
-	}
+        boundingBox = new Rectangle(x, y, width, height);
+        boundingBox.setBounds(x, y, width, height);
+    }
 
-	public void tick(Game game) 
-	{
-		boundingBox.setBounds(x, y, width, height);
+    public void tick(Game game) 
+    {
+        boundingBox.setBounds(x, y, width, height);
 
-		if (!isTwoPlayer) 
-		{
-			if (game.ball.y < y && y >= 0) 
-			{
-				y -= speed;
-			} 
-			else if (game.ball.y > y && y + height <= game.getHeight()) 
-			{
-				y += speed;
-			}
-		} 
-		else 
-		{
-			if (goingUp) 
-			{
-				y -= speed;
-			} 
-			else if (goingDown)
-			{
-				y += speed;
-			}
-		}
-	}
+        if (isTwoPlayer == true)
+        {
+            if (game.ball.y < y && y >= 0) 
+            {
+                y -= speed;
+            } 
+            else if (game.ball.y > y && y + height <= game.getHeight()) 
+            {
+                y += speed;
+            }
+        } 
+        else
+        {
+            if (goingUp)
+            {
+                y -= speed;
+            }
+            else if (goingDown)
+            {
+                y += speed;
+            }
+        }
+    }
 
-	public void render(Graphics g) 
-	{
-		g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
-		g.fillRect(x, y, width, height);
-	}
+    public void render(Graphics g) 
+    {
+        //g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        g.setColor(Color.WHITE);
+        g.fillRect(x, y, width, height);
+    }
 }

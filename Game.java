@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 
 public class Game extends Canvas implements Runnable 
 {
-    private static final long serialVersionUID = 1L;
+    //private static final long serialVersionUID = 1L;
 
     public static PlayerPaddle player;
     public static AIPaddle ai;

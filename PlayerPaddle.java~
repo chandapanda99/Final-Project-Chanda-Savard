@@ -3,13 +3,14 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.*;
 
-public class PlayerPaddle {
+public class PlayerPaddle 
+{
     
     int x;
     int y;
     int width = 20;
     int height = 100;
-    double speed = 50;
+    double speed = 15;
     Random generator = new Random();
 
     Rectangle boundingBox;
@@ -37,8 +38,8 @@ public class PlayerPaddle {
     }
 
     public void render(Graphics g) {
-        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        //g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        g.setColor(Color.WHITE);
         g.fillRect(x, y, width, height);
-
     }
 }
