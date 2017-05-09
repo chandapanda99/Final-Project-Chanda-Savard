@@ -9,10 +9,8 @@ public class AIPaddle
     int y;
     int width = 20;
     int height = 100;
-    double speed = 25;
+    double speed = 15;
     Random generator = new Random();
-
-    boolean isTwoPlayer = false;
 
     Rectangle boundingBox;
 
@@ -32,34 +30,20 @@ public class AIPaddle
     {
         boundingBox.setBounds(x, y, width, height);
 
-        if (isTwoPlayer == true)
+        if (goingUp)
         {
-            if (game.ball.y < y && y >= 0) 
-            {
-                y -= speed;
-            } 
-            else if (game.ball.y > y && y + height <= game.getHeight()) 
-            {
-                y += speed;
-            }
-        } 
-        else
+            y -= speed;
+        }
+        else if (goingDown)
         {
-            if (goingUp)
-            {
-                y -= speed;
-            }
-            else if (goingDown)
-            {
-                y += speed;
-            }
+            y += speed;
         }
     }
 
     public void render(Graphics g) 
     {
-        //g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
-        g.setColor(Color.WHITE);
+        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        //g.setColor(Color.WHITE);
         g.fillRect(x, y, width, height);
     }
 }

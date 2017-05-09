@@ -27,10 +27,12 @@ public class MainMenu extends JFrame
         getContentPane().setLayout(null);
 
         Play.setBounds((screenWidth - buttonWidth) / 2, 5, buttonWidth, buttonHeight);
-        Quit.setBounds((screenWidth - buttonWidth) / 2, 50, buttonWidth, buttonHeight);
+        Quit.setBounds((screenWidth - buttonWidth) / 2, 100, buttonWidth, buttonHeight);
+        twoPlayer.setBounds((screenWidth - buttonWidth) / 2, 50, buttonWidth, buttonHeight);
 
         getContentPane().add(Play);
         getContentPane().add(Quit);
+        getContentPane().add(twoPlayer);
 
         pack();
         setVisible(true);
@@ -45,6 +47,7 @@ public class MainMenu extends JFrame
     private void addButtons() {
         Play = new JButton("Play Speed Pong!");
         Quit = new JButton("Don't Play Speed Pong! if you are prone to seizures. Click to quit");
+        twoPlayer = new JCheckBox("Two Player Mode");
     }
 
     private void addActions() {

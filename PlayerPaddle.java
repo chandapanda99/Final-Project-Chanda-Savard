@@ -10,7 +10,7 @@ public class PlayerPaddle
     int y;
     int width = 20;
     int height = 100;
-    double speed = 25;
+    double speed = 15;
     Random generator = new Random();
 
     Rectangle boundingBox;
@@ -18,7 +18,8 @@ public class PlayerPaddle
     boolean goingUp = false;
     boolean goingDown = false;
 
-    public PlayerPaddle(int x, int y) {
+    public PlayerPaddle(int x, int y) 
+    {
         this.x = x;
         this.y = y;
         
@@ -26,7 +27,20 @@ public class PlayerPaddle
         boundingBox.setBounds(x, y, width, height);
     }
 
-    public void tick(Game game) {
+    public void tick(Game game) 
+    {
+        boundingBox.setBounds(x, y, width, height);
+        
+        if (goingUp && y > 0) {
+            y -= speed;
+        }
+        else if (goingDown && y < game.getHeight() - height) {
+            y += speed;
+        }
+    }
+    
+    public void tick(GameTwoPlayer game) 
+    {
         boundingBox.setBounds(x, y, width, height);
         
         if (goingUp && y > 0) {
@@ -38,8 +52,8 @@ public class PlayerPaddle
     }
 
     public void render(Graphics g) {
-        //g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
-        g.setColor(Color.WHITE);
+        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        //g.setColor(Color.WHITE);
         g.fillRect(x, y, width, height);
     }
 }

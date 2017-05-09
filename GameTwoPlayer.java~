@@ -8,13 +8,10 @@ import java.awt.image.BufferedImage;
 import java.util.*;
 import javax.swing.JFrame;
 
-public class Game extends Canvas implements Runnable 
+public class GameTwoPlayer extends Canvas implements Runnable 
 {
-    //private static final long serialVersionUID = 1L;
-
     public static PlayerPaddle player;
     public static SecondPlayer player2;
-    public static AIPaddle ai;
     public static Ball ball;
     InputHandler IH;
     Scanner Keyboard = new Scanner(System.in);
@@ -80,7 +77,6 @@ public class Game extends Canvas implements Runnable
 
         player = new PlayerPaddle(10, 60);
         player2 = new SecondPlayer(getWidth() - 20, 60);
-        ai = new AIPaddle(getWidth() - 20, 60);
         ball = new Ball(getWidth() / 2, getHeight() / 2);
 
     }
@@ -89,7 +85,6 @@ public class Game extends Canvas implements Runnable
     {
         player.tick(this);
         player2.tick(this);
-        ai.tick(this);
         ball.tick(this);
     }
 
@@ -111,7 +106,6 @@ public class Game extends Canvas implements Runnable
         g.drawString("Player 2: " + p2Score, getWidth() - 900, 10);
 
         player.render(g);
-        ai.render(g);
         player2.render(g);
         ball.render(g);
 

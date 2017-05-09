@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=x\ y
-comment0.target=PlayerPaddle(int,\ int)
+comment0.target=SecondPlayer(int,\ int)
 comment1.params=game
 comment1.target=void\ tick(Game)
 comment2.params=game

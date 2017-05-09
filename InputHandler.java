@@ -1,40 +1,73 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class InputHandler implements KeyListener {
+public class InputHandler implements KeyListener 
+{
 
-	public InputHandler(Game game) {
-		game.addKeyListener(this);
-	}
+    public InputHandler(Game game) 
+    {
+        game.addKeyListener(this);
+    }
+    
+    public InputHandler (GameTwoPlayer game2)
+    {
+        game2.addKeyListener(this);
+    }
 
-	public void keyPressed(KeyEvent e) {
-		int keyCode = e.getKeyCode();
+    public void keyPressed(KeyEvent e) 
+    {
+        int keyCode = e.getKeyCode();
 
-		if (keyCode == KeyEvent.VK_W) {
-			Game.player.goingUp = true;
-		}
-		else if (keyCode == KeyEvent.VK_S) {
-			Game.player.goingDown = true;
-		}
+        if (keyCode == KeyEvent.VK_W) 
+        {
+            Game.player.goingUp = true;
+        }
+        else if (keyCode == KeyEvent.VK_S) 
+        {
+            Game.player.goingDown = true;
+        }
 
-		if (keyCode == KeyEvent.VK_ESCAPE) {
-			System.exit(0);
-		}
-	}
+        if (keyCode == KeyEvent.VK_UP)
+        {
+            Game.player2.goingUp = true;
+        }
+        else if (keyCode == KeyEvent.VK_DOWN)
+        {
+            Game.player2.goingDown = true;
+        }
 
-	public void keyReleased(KeyEvent e) {
-		int keyCode = e.getKeyCode();
+        if (keyCode == KeyEvent.VK_ESCAPE) 
+        {
+            System.exit(0);
+        }
+    }
 
-		if (keyCode == KeyEvent.VK_W) {
-			Game.player.goingUp = false;
-		}
-		else if (keyCode == KeyEvent.VK_S) {
-			Game.player.goingDown = false;
-		}
-	}
+    public void keyReleased(KeyEvent e) 
+    {
+        int keyCode = e.getKeyCode();
 
-	public void keyTyped(KeyEvent e) {
+        if (keyCode == KeyEvent.VK_W) 
+        {
+            Game.player.goingUp = false;
+        }
+        else if (keyCode == KeyEvent.VK_S) 
+        {
+            Game.player.goingDown = false;
+        }
+        
+        if (keyCode == KeyEvent.VK_UP)
+        {
+            Game.player2.goingUp = false;
+        }
+        else if (keyCode == KeyEvent.VK_DOWN)
+        {
+            Game.player2.goingDown = false;
+        }
+    }
 
-	}
+    public void keyTyped(KeyEvent e) 
+    {
+
+    }
 
 }
