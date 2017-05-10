@@ -9,13 +9,13 @@ public class AIPaddle
     int y;
     int width = 20;
     int height = 100;
-    double speed = 15;
+    double speed = 25;
     Random generator = new Random();
 
     Rectangle boundingBox;
 
-    boolean goingUp = false;
-    boolean goingDown = false;
+    boolean goingUp = true;
+    boolean goingDown = true;
 
     public AIPaddle(int x, int y) 
     {

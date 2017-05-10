@@ -13,7 +13,7 @@ public class GameTwoPlayer extends Canvas implements Runnable
     public static PlayerPaddle player;
     public static SecondPlayer player2;
     public static Ball ball;
-    InputHandler IH;
+    InputHandlerTwo IH;
     Scanner Keyboard = new Scanner(System.in);
     JFrame frame;
     public final int WIDTH = 1580;
@@ -73,7 +73,7 @@ public class GameTwoPlayer extends Canvas implements Runnable
         frame.setTitle("Speed Pong!");
         frame.setLocationRelativeTo(null);
 
-        IH = new InputHandler(this);
+        IH = new InputHandlerTwo(this);
 
         player = new PlayerPaddle(10, 60);
         player2 = new SecondPlayer(getWidth() - 20, 60);

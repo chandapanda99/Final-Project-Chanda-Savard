@@ -52,30 +52,30 @@ public class Ball
         paddleCollide(game);
     }
     
-    public void tick(GameTwoPlayer game2) 
+    public void tick(GameTwoPlayer game) 
     {
         boundingBox.setBounds(x, y, size, size);
 
         if (x <= 0) {
-            game2.p2Score++;
+            game.p2Score++;
             vx = speed;
         } 
-        else if (x + size >= game2.getWidth()) {
-            game2.p1Score++;
+        else if (x + size >= game.getWidth()) {
+            game.p1Score++;
             vx = -speed;
         }
 
         if (y <= 0) {
             vy = speed;
         } 
-        else if (y + size >= game2.getHeight()) {
+        else if (y + size >= game.getHeight()) {
             vy = -speed;
         }
 
         x += vx;
         y += vy;
 
-        paddleCollide(game2);
+        paddleCollide(game);
     }
 
     private void paddleCollide(Game game) 
@@ -100,8 +100,8 @@ public class Ball
 
     public void render(Graphics g) 
     {
-        //g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
-        g.setColor(Color.RED);
+        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        //g.setColor(Color.RED);
         g.fillOval(x, y, size, size);
     }
 }

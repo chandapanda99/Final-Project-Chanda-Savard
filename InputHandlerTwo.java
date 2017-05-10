@@ -1,14 +1,9 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class InputHandler implements KeyListener 
-{
-    public InputHandler(Game game) 
-    {
-        game.addKeyListener(this);
-    }
-    
-    public InputHandler (GameTwoPlayer game)
+public class InputHandlerTwo implements KeyListener 
+{  
+    public InputHandlerTwo (GameTwoPlayer game)
     {
         game.addKeyListener(this);
     }
@@ -19,20 +14,20 @@ public class InputHandler implements KeyListener
 
         if (keyCode == KeyEvent.VK_W) 
         {
-            Game.player.goingUp = true;
+            GameTwoPlayer.player.goingUp = true;
         }
         else if (keyCode == KeyEvent.VK_S) 
         {
-            Game.player.goingDown = true;
+            GameTwoPlayer.player.goingDown = true;
         }
 
         if (keyCode == KeyEvent.VK_UP)
         {
-            Game.player2.goingUp = true;
+            GameTwoPlayer.player2.goingUp = true;
         }
         else if (keyCode == KeyEvent.VK_DOWN)
         {
-            Game.player2.goingDown = true;
+            GameTwoPlayer.player2.goingDown = true;
         }
 
         if (keyCode == KeyEvent.VK_ESCAPE) 
@@ -47,20 +42,20 @@ public class InputHandler implements KeyListener
 
         if (keyCode == KeyEvent.VK_W) 
         {
-            Game.player.goingUp = false;
+            GameTwoPlayer.player.goingUp = false;
         }
         else if (keyCode == KeyEvent.VK_S) 
         {
-            Game.player.goingDown = false;
+            GameTwoPlayer.player.goingDown = false;
         }
         
         if (keyCode == KeyEvent.VK_UP)
         {
-            Game.player2.goingUp = false;
+            GameTwoPlayer.player2.goingUp = false;
         }
         else if (keyCode == KeyEvent.VK_DOWN)
         {
-            Game.player2.goingDown = false;
+            GameTwoPlayer.player2.goingDown = false;
         }
     }
 

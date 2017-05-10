@@ -15,8 +15,7 @@ public class MainMenu extends JFrame
     int buttonWidth = 500;
     int buttonHeight = 30;
 
-    JButton Play, Quit;
-    JCheckBox twoPlayer;
+    JButton Play, Quit, twoPlayer;
 
     public MainMenu() 
     {
@@ -61,6 +60,18 @@ public class MainMenu extends JFrame
 
                     game.start();
 
+                }
+            });
+            
+        twoPlayer.addActionListener(new ActionListener()
+            {
+                public void actionPerformed (ActionEvent e)
+                {
+                    dispose();
+                    
+                    GameTwoPlayer game = new GameTwoPlayer();
+                    
+                    game.start();
                 }
             });
 

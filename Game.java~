@@ -13,7 +13,6 @@ public class Game extends Canvas implements Runnable
     //private static final long serialVersionUID = 1L;
 
     public static PlayerPaddle player;
-    public static SecondPlayer player2;
     public static AIPaddle ai;
     public static Ball ball;
     InputHandler IH;
@@ -79,7 +78,6 @@ public class Game extends Canvas implements Runnable
         IH = new InputHandler(this);
 
         player = new PlayerPaddle(10, 60);
-        player2 = new SecondPlayer(getWidth() - 20, 60);
         ai = new AIPaddle(getWidth() - 20, 60);
         ball = new Ball(getWidth() / 2, getHeight() / 2);
 
@@ -88,7 +86,6 @@ public class Game extends Canvas implements Runnable
     public void tick() 
     {
         player.tick(this);
-        player2.tick(this);
         ai.tick(this);
         ball.tick(this);
     }
@@ -108,7 +105,7 @@ public class Game extends Canvas implements Runnable
         g.setColor(Color.RED);
 
         g.drawString("Player 1: " + p1Score, 5, 10);
-        g.drawString("Player 2: " + p2Score, getWidth() - 70, 10);
+        g.drawString("Player 2: " + p2Score, getWidth() - 800, 10);
 
         player.render(g);
         ai.render(g);

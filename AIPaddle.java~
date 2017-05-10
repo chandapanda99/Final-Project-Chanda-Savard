@@ -9,7 +9,7 @@ public class AIPaddle
     int y;
     int width = 20;
     int height = 100;
-    double speed = 35;
+    double speed = 25;
     Random generator = new Random();
 
     Rectangle boundingBox;
@@ -42,8 +42,8 @@ public class AIPaddle
 
     public void render(Graphics g) 
     {
-        //g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
-        g.setColor(Color.WHITE);
+        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        //g.setColor(Color.WHITE);
         g.fillRect(x, y, width, height);
     }
 }

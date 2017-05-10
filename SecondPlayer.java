@@ -10,7 +10,7 @@ public class SecondPlayer
     int y;
     int width = 20;
     int height = 100;
-    double speed = 15;
+    double speed = 25;
     Random generator = new Random();
 
     Rectangle boundingBox;
@@ -25,18 +25,6 @@ public class SecondPlayer
         
         boundingBox = new Rectangle(x, y, width, height);
         boundingBox.setBounds(x, y, width, height);
-    }
-
-    public void tick(Game game) 
-    {
-        boundingBox.setBounds(x, y, width, height);
-        
-        if (goingUp && y > 0) {
-            y -= speed;
-        }
-        else if (goingDown && y < game.getHeight() - height) {
-            y += speed;
-        }
     }
     
     public void tick(GameTwoPlayer game) 
