@@ -6,7 +6,8 @@ import java.util.*;
 public class Ball 
 {
     int size = 40;
-    int speed = 25;
+    int speed = 35;
+    int speed1 = 20;
     int vx, vy;
     Random generator = new Random();
     int x = generator.nextInt(300) + 50;
@@ -21,6 +22,18 @@ public class Ball
 
         vx = speed;
         vy = speed;
+
+        boundingBox = new Rectangle(x, y, size, size);
+        boundingBox.setBounds(this.x, this.y, this.size, this.size);
+    }
+    
+    public Ball(int x, int y, boolean isTwo)
+    {
+        this.x = x;
+        this.y = y;
+
+        vx = speed1;
+        vy = speed1;
 
         boundingBox = new Rectangle(x, y, size, size);
         boundingBox.setBounds(this.x, this.y, this.size, this.size);

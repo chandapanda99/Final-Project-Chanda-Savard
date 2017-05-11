@@ -3,8 +3,10 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+import java.awt.Font;
 import java.util.*;
 import javax.swing.JFrame;
 
@@ -103,8 +105,9 @@ public class Game extends Canvas implements Runnable
         g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 
         g.setColor(Color.RED);
-
-        g.drawString("Score: " + p1Score, 5, 10);
+        
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 30));
+        g.drawString("Score: " + p1Score, 10, 25);
 
         player.render(g);
         ai.render(g);

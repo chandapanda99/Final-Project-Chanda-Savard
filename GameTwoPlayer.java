@@ -77,7 +77,7 @@ public class GameTwoPlayer extends Canvas implements Runnable
 
         player = new PlayerPaddle(10, 60);
         player2 = new SecondPlayer(getWidth() - 20, 60);
-        ball = new Ball(getWidth() / 2, getHeight() / 2);
+        ball = new Ball(getWidth() / 2, getHeight() / 2, true);
 
     }
 
@@ -101,8 +101,8 @@ public class GameTwoPlayer extends Canvas implements Runnable
         g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 
         g.setColor(Color.RED);
-
-        g.drawString("Player 1: " + p1Score, 5, 10);
+        
+        g.drawString("Player 1: " + p1Score, 10, 30);
         g.drawString("Player 2: " + p2Score, getWidth() - 900, 10);
 
         player.render(g);

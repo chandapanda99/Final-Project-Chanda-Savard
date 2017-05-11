@@ -6,7 +6,8 @@ import java.util.*;
 public class Ball 
 {
     int size = 40;
-    int speed = 5;
+    int speed = 35;
+    int speed1 = 15;
     int vx, vy;
     Random generator = new Random();
     int x = generator.nextInt(300) + 50;
@@ -21,6 +22,18 @@ public class Ball
 
         vx = speed;
         vy = speed;
+
+        boundingBox = new Rectangle(x, y, size, size);
+        boundingBox.setBounds(this.x, this.y, this.size, this.size);
+    }
+    
+    public Ball(int x, int y, boolean isTwo)
+    {
+        this.x = x;
+        this.y = y;
+
+        vx = speed1;
+        vy = speed1;
 
         boundingBox = new Rectangle(x, y, size, size);
         boundingBox.setBounds(this.x, this.y, this.size, this.size);
@@ -58,18 +71,18 @@ public class Ball
 
         if (x <= 0) {
             game.p2Score++;
-            vx = speed;
+            vx = speed1;
         } 
         else if (x + size >= game.getWidth()) {
             game.p1Score++;
-            vx = -speed;
+            vx = -speed1;
         }
 
         if (y <= 0) {
-            vy = speed;
+            vy = speed1;
         } 
         else if (y + size >= game.getHeight()) {
-            vy = -speed;
+            vy = -speed1;
         }
 
         x += vx;
@@ -91,10 +104,10 @@ public class Ball
     private void paddleCollide(GameTwoPlayer game) 
     {
         if (boundingBox.intersects(game.player.boundingBox)) {
-            vx = speed;
+            vx = speed1;
         } 
         else if (boundingBox.intersects(game.player2.boundingBox)) {
-            vx = -speed;
+            vx = -speed1;
         }
     }
 

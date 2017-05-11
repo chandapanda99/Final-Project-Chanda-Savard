@@ -10,7 +10,7 @@ public class PlayerPaddle
     int y;
     int width = 20;
     int height = 100;
-    double speed = 25;
+    double speed = 35;
     Random generator = new Random();
 
     Rectangle boundingBox;
