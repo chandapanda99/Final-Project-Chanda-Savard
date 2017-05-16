@@ -14,7 +14,7 @@ public class AIPaddle
 
     Rectangle boundingBox;
 
-    boolean goingUp = true;
+    boolean goingUp = false;
     boolean goingDown = true;
 
     public AIPaddle(int x, int y) 
@@ -30,11 +30,11 @@ public class AIPaddle
     {
         boundingBox.setBounds(x, y, width, height);
 
-        if (goingUp)
+        if (goingUp && speed < 0)
         {
             y -= speed;
         }
-        else if (goingDown)
+        else if (goingDown && speed > 0)
         {
             y += speed;
         }

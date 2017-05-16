@@ -1,8 +1,4 @@
-import java.awt.BorderLayout;
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.*;
@@ -13,6 +9,7 @@ public class GameTwoPlayer extends Canvas implements Runnable
     public static PlayerPaddle player;
     public static SecondPlayer player2;
     public static Ball ball;
+    Random generator = new Random();
     InputHandlerTwo IH;
     Scanner Keyboard = new Scanner(System.in);
     JFrame frame;
@@ -100,10 +97,11 @@ public class GameTwoPlayer extends Canvas implements Runnable
 
         g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 
-        g.setColor(Color.RED);
+        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
         
-        g.drawString("Player 1: " + p1Score, 5, 10);
-        g.drawString("Player 2: " + p2Score, getWidth() - 900, 10);
+        g.setFont(new Font("Impact", Font.PLAIN, 30));
+        g.drawString("Player 1: " + p1Score, 10, 30);
+        g.drawString("Player 2: " + p2Score, getWidth() - 900, 30);
 
         player.render(g);
         player2.render(g);

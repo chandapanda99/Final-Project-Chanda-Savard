@@ -6,7 +6,7 @@ import java.util.*;
 public class Ball 
 {
     int size = 40;
-    int speed = 35;
+    int speed = 20;
     int speed1 = 15;
     int vx, vy;
     Random generator = new Random();
@@ -20,8 +20,8 @@ public class Ball
         this.x = x;
         this.y = y;
 
-        vx = speed;
-        vy = speed;
+        vx = speed1;
+        vy = speed1;
 
         boundingBox = new Rectangle(x, y, size, size);
         boundingBox.setBounds(this.x, this.y, this.size, this.size);
@@ -32,8 +32,8 @@ public class Ball
         this.x = x;
         this.y = y;
 
-        vx = speed1;
-        vy = speed1;
+        vx = speed;
+        vy = speed;
 
         boundingBox = new Rectangle(x, y, size, size);
         boundingBox.setBounds(this.x, this.y, this.size, this.size);
@@ -42,20 +42,18 @@ public class Ball
     public void tick(Game game) 
     {
         boundingBox.setBounds(x, y, size, size);
-
-        if (x <= 0) {
-            game.p2Score++;
-            vx = speed;
-        } 
-        else if (x + size >= game.getWidth()) {
+        if (x + size >= game.getWidth()) 
+        {
             game.p1Score++;
             vx = -speed;
         }
 
-        if (y <= 0) {
+        if (y <= 0) 
+        {
             vy = speed;
         } 
-        else if (y + size >= game.getHeight()) {
+        else if (y + size >= game.getHeight()) 
+        {
             vy = -speed;
         }
 

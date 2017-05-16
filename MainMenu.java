@@ -45,7 +45,7 @@ public class MainMenu extends JFrame
 
     private void addButtons() {
         Play = new JButton("Play Speed Pong!");
-        Quit = new JButton("Don't Play Speed Pong! if you are prone to seizures. Click to quit");
+        Quit = new JButton("Don't Play if you are prone to seizures. Click to quit");
         twoPlayer = new JButton("Two Player Mode");
     }
 
