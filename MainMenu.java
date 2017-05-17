@@ -39,7 +39,7 @@ public class MainMenu extends JFrame
         setVisible(true);
         setLocationRelativeTo(null);
         setSize(screenWidth, screenHeight);
-        setTitle("Speed Pong! Menu");
+        setTitle("Da Pong! Menu");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBackground(Color.BLACK);
         setResizable(false);
@@ -47,7 +47,7 @@ public class MainMenu extends JFrame
 
     private void addButtons() {
         Play = new JButton("Play Speed Pong!");
-        Seizure = new JButton("Play Seizure Pong!");
+        Seizure = new JButton("Play Epileptic Pong!");
         Quit = new JButton("Click to quit");
         twoPlayer = new JButton("Two Player Mode");
     }
