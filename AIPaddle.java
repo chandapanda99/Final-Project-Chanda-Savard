@@ -39,6 +39,20 @@ public class AIPaddle
             y += speed;
         }
     }
+    
+    public void tick(NormalGame game) 
+    {
+        boundingBox.setBounds(x, y, width, height);
+
+        if (goingUp && speed < 0)
+        {
+            y -= speed;
+        }
+        else if (goingDown && speed > 0)
+        {
+            y += speed;
+        }
+    }
 
     public void render(Graphics g) 
     {

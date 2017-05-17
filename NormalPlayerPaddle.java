@@ -3,7 +3,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.*;
 
-public class PlayerPaddle 
+public class NormalPlayerPaddle 
 {
     
     int x;
@@ -18,25 +18,13 @@ public class PlayerPaddle
     boolean goingUp = false;
     boolean goingDown = false;
 
-    public PlayerPaddle(int x, int y) 
+    public NormalPlayerPaddle(int x, int y) 
     {
         this.x = x;
         this.y = y;
         
         boundingBox = new Rectangle(x, y, width, height);
         boundingBox.setBounds(x, y, width, height);
-    }
-
-    public void tick(Game game) 
-    {
-        boundingBox.setBounds(x, y, width, height);
-        
-        if (goingUp && y > 0) {
-            y -= speed;
-        }
-        else if (goingDown && y < game.getHeight() - height) {
-            y += speed;
-        }
     }
     
     public void tick(NormalGame game) 
@@ -50,22 +38,9 @@ public class PlayerPaddle
             y += speed;
         }
     }
-    
-    public void tick(GameTwoPlayer game) 
-    {
-        boundingBox.setBounds(x, y, width, height);
-        
-        if (goingUp && y > 0) {
-            y -= speed;
-        }
-        else if (goingDown && y < game.getHeight() - height) {
-            y += speed;
-        }
-    }
 
     public void render(Graphics g) {
-        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
-        //g.setColor(Color.WHITE);
+        g.setColor(Color.WHITE);
         g.fillRect(x, y, width, height);
     }
 }

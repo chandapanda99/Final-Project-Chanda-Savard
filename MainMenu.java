@@ -15,7 +15,7 @@ public class MainMenu extends JFrame
     int buttonWidth = 500;
     int buttonHeight = 30;
 
-    JButton Play, Quit, twoPlayer;
+    JButton Play, Quit, twoPlayer, Seizure;
 
     public MainMenu() 
     {
@@ -26,10 +26,12 @@ public class MainMenu extends JFrame
         getContentPane().setLayout(null);
 
         Play.setBounds((screenWidth - buttonWidth) / 2, 5, buttonWidth, buttonHeight);
-        Quit.setBounds((screenWidth - buttonWidth) / 2, 100, buttonWidth, buttonHeight);
+        Seizure.setBounds((screenWidth - buttonWidth) / 2, 100, buttonWidth, buttonHeight);
+        Quit.setBounds((screenWidth - buttonWidth) / 2, 200, buttonWidth, buttonHeight);
         twoPlayer.setBounds((screenWidth - buttonWidth) / 2, 50, buttonWidth, buttonHeight);
 
         getContentPane().add(Play);
+        getContentPane().add(Seizure);
         getContentPane().add(Quit);
         getContentPane().add(twoPlayer);
 
@@ -45,13 +47,26 @@ public class MainMenu extends JFrame
 
     private void addButtons() {
         Play = new JButton("Play Speed Pong!");
-        Quit = new JButton("Don't Play if you are prone to seizures. Click to quit");
+        Seizure = new JButton("Play Seizure Pong!");
+        Quit = new JButton("Click to quit");
         twoPlayer = new JButton("Two Player Mode");
     }
 
     private void addActions() {
 
         Play.addActionListener(new ActionListener()
+            {
+                public void actionPerformed(ActionEvent e) {
+                    dispose();
+
+                    NormalGame game = new NormalGame();
+
+                    game.start();
+
+                }
+            });
+            
+        Seizure.addActionListener(new ActionListener()
             {
                 public void actionPerformed(ActionEvent e) {
                     dispose();

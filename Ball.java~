@@ -6,8 +6,8 @@ import java.util.*;
 public class Ball 
 {
     int size = 40;
-    int speed = 25;
-    int speed1 = 15;
+    int speed = 20;
+    int speed1 = 1;
     int vx, vy;
     Random generator = new Random();
     int x = generator.nextInt(300) + 50;
