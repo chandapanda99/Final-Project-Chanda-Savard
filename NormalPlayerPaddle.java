@@ -38,6 +38,18 @@ public class NormalPlayerPaddle
             y += speed;
         }
     }
+    
+    public void tick(GameTwoPlayer game) 
+    {
+        boundingBox.setBounds(x, y, width, height);
+        
+        if (goingUp && y > 0) {
+            y -= speed;
+        }
+        else if (goingDown && y < game.getHeight() - height) {
+            y += speed;
+        }
+    }
 
     public void render(Graphics g) {
         g.setColor(Color.WHITE);

@@ -40,8 +40,8 @@ public class SecondPlayer
     }
 
     public void render(Graphics g) {
-        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
-        //g.setColor(Color.WHITE);
+        //g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        g.setColor(Color.WHITE);
         g.fillRect(x, y, width, height);
     }
 }

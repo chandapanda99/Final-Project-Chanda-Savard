@@ -62,6 +62,18 @@ public class PlayerPaddle
             y += speed;
         }
     }
+    
+    public void tick(SeizureTwoPlayer game) 
+    {
+        boundingBox.setBounds(x, y, width, height);
+        
+        if (goingUp && y > 0) {
+            y -= speed;
+        }
+        else if (goingDown && y < game.getHeight() - height) {
+            y += speed;
+        }
+    }
 
     public void render(Graphics g) {
         g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));

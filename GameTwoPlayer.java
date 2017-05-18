@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 public class GameTwoPlayer extends Canvas implements Runnable 
 {
-    public static PlayerPaddle player;
+    public static NormalPlayerPaddle player;
     public static SecondPlayer player2;
     public static Ball ball;
     Random generator = new Random();
@@ -21,7 +21,8 @@ public class GameTwoPlayer extends Canvas implements Runnable
 
     static boolean gameRunning = false;
 
-    int p1Score, p2Score;
+    int p1Score = -1;
+    int p2Score;
 
     public void run() 
     {
@@ -72,7 +73,7 @@ public class GameTwoPlayer extends Canvas implements Runnable
 
         IH = new InputHandlerTwo(this);
 
-        player = new PlayerPaddle(10, 60);
+        player = new NormalPlayerPaddle(10, 60);
         player2 = new SecondPlayer(getWidth() - 20, 60);
         ball = new Ball(getWidth() / 2, getHeight() / 2, true);
 
@@ -97,7 +98,7 @@ public class GameTwoPlayer extends Canvas implements Runnable
 
         g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 
-        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        g.setColor(Color.WHITE);
         
         g.setFont(new Font("Impact", Font.PLAIN, 30));
         g.drawString("Player 1: " + p1Score, 10, 30);

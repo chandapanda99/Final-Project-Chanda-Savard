@@ -4,15 +4,13 @@ import java.awt.image.BufferedImage;
 import java.util.*;
 import javax.swing.JFrame;
 
-public class Game extends Canvas implements Runnable 
+public class SeizureTwoPlayer extends Canvas implements Runnable 
 {
-    //private static final long serialVersionUID = 1L;
-
     public static PlayerPaddle player;
-    public static AIPaddle ai;
+    public static SeizurePlayerTwo player2;
     public static SeizureBall ball;
     Random generator = new Random();
-    InputHandler IH;
+    InputHandlerSeizureTwo IH;
     Scanner Keyboard = new Scanner(System.in);
     JFrame frame;
     public final int WIDTH = 1580;
@@ -55,7 +53,7 @@ public class Game extends Canvas implements Runnable
         System.exit(0);
     }
 
-    public Game() 
+    public SeizureTwoPlayer() 
     {
         frame = new JFrame();
 
@@ -65,27 +63,26 @@ public class Game extends Canvas implements Runnable
 
         frame.add(this, BorderLayout.CENTER);
         frame.pack();
-        
-        frame.getContentPane().setBackground(Color.CYAN);
-        
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setResizable(false);
-        frame.setTitle("Speed Pong!");
+        frame.setBackground(Color.GREEN);
+        frame.setTitle("Two Player Pong!");
         frame.setLocationRelativeTo(null);
 
-        IH = new InputHandler(this);
+        IH = new InputHandlerSeizureTwo(this);
 
         player = new PlayerPaddle(10, 60);
-        ai = new AIPaddle(getWidth() - 20, 60);
-        ball = new Ball(getWidth() / 2, getHeight() / 2);
+        player2 = new SeizurePlayerTwo(getWidth() - 20, 60);
+        ball = new SeizureBall(getWidth() / 2, getHeight() / 2, true);
 
     }
 
     public void tick() 
     {
         player.tick(this);
-        ai.tick(this);
+        player2.tick(this);
         ball.tick(this);
     }
 
@@ -98,17 +95,17 @@ public class Game extends Canvas implements Runnable
             return;
         }
         Graphics g = bs.getDrawGraphics();
-        
-        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
-        g.fillRect(0, 0, getWidth(), getHeight());
+
+        g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 
         g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
         
         g.setFont(new Font("Impact", Font.PLAIN, 30));
-        g.drawString("Score: " + p1Score, 10, 25);
+        g.drawString("Player 1: " + p1Score, 10, 30);
+        g.drawString("Player 2: " + p2Score, getWidth() - 900, 30);
 
         player.render(g);
-        //ai.render(g);
+        player2.render(g);
         ball.render(g);
 
         g.dispose();

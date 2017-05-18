@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=x\ y
+comment0.target=SeizureBall(int,\ int)
+comment1.params=x\ y\ isTwo
+comment1.target=SeizureBall(int,\ int,\ boolean)
+comment2.params=game
+comment2.target=void\ tick(Game)
+comment3.params=game
+comment3.target=void\ tick(SeizureTwoPlayer)
+comment4.params=game
+comment4.target=void\ paddleCollide(Game)
+comment5.params=game
+comment5.target=void\ paddleCollide(SeizureTwoPlayer)
+comment6.params=g
+comment6.target=void\ render(java.awt.Graphics)
+numComments=7

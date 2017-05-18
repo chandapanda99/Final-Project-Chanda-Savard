@@ -1,14 +1,9 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class InputHandlerTwo implements KeyListener 
+public class InputHandlerSeizureTwo implements KeyListener 
 {  
-    public InputHandlerTwo (GameTwoPlayer game)
-    {
-        game.addKeyListener(this);
-    }
-    
-    public InputHandlerTwo (SeizureTwoPlayer game)
+    public InputHandlerSeizureTwo (SeizureTwoPlayer game)
     {
         game.addKeyListener(this);
     }
@@ -19,20 +14,20 @@ public class InputHandlerTwo implements KeyListener
 
         if (keyCode == KeyEvent.VK_W) 
         {
-            GameTwoPlayer.player.goingUp = true;
+            SeizureTwoPlayer.player.goingUp = true;
         }
         else if (keyCode == KeyEvent.VK_S) 
         {
-            GameTwoPlayer.player.goingDown = true;
+            SeizureTwoPlayer.player.goingDown = true;
         }
 
         if (keyCode == KeyEvent.VK_UP)
         {
-            GameTwoPlayer.player2.goingUp = true;
+            SeizureTwoPlayer.player2.goingUp = true;
         }
         else if (keyCode == KeyEvent.VK_DOWN)
         {
-            GameTwoPlayer.player2.goingDown = true;
+            SeizureTwoPlayer.player2.goingDown = true;
         }
 
         if (keyCode == KeyEvent.VK_ESCAPE) 
@@ -47,20 +42,20 @@ public class InputHandlerTwo implements KeyListener
 
         if (keyCode == KeyEvent.VK_W) 
         {
-            GameTwoPlayer.player.goingUp = false;
+            SeizureTwoPlayer.player.goingUp = false;
         }
         else if (keyCode == KeyEvent.VK_S) 
         {
-            GameTwoPlayer.player.goingDown = false;
+            SeizureTwoPlayer.player.goingDown = false;
         }
         
         if (keyCode == KeyEvent.VK_UP)
         {
-            GameTwoPlayer.player2.goingUp = false;
+            SeizureTwoPlayer.player2.goingUp = false;
         }
         else if (keyCode == KeyEvent.VK_DOWN)
         {
-            GameTwoPlayer.player2.goingDown = false;
+            SeizureTwoPlayer.player2.goingDown = false;
         }
     }
 

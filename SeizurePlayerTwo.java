@@ -3,14 +3,14 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.*;
 
-public class NormalPlayerPaddle 
+public class SeizurePlayerTwo
 {
     
     int x;
     int y;
     int width = 20;
     int height = 100;
-    double speed = 35;
+    double speed = 25;
     Random generator = new Random();
 
     Rectangle boundingBox;
@@ -18,7 +18,7 @@ public class NormalPlayerPaddle
     boolean goingUp = false;
     boolean goingDown = false;
 
-    public NormalPlayerPaddle(int x, int y) 
+    public SeizurePlayerTwo(int x, int y) 
     {
         this.x = x;
         this.y = y;
@@ -27,7 +27,7 @@ public class NormalPlayerPaddle
         boundingBox.setBounds(x, y, width, height);
     }
     
-    public void tick(NormalGame game) 
+    public void tick(Game game) 
     {
         boundingBox.setBounds(x, y, width, height);
         
@@ -39,7 +39,7 @@ public class NormalPlayerPaddle
         }
     }
     
-    public void tick(GameTwoPlayer game) 
+    public void tick(SeizureTwoPlayer game) 
     {
         boundingBox.setBounds(x, y, width, height);
         
@@ -52,7 +52,8 @@ public class NormalPlayerPaddle
     }
 
     public void render(Graphics g) {
-        g.setColor(Color.RED);
+        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        //g.setColor(Color.WHITE);
         g.fillRect(x, y, width, height);
     }
 }

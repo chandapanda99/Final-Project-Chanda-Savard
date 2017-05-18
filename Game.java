@@ -10,7 +10,7 @@ public class Game extends Canvas implements Runnable
 
     public static PlayerPaddle player;
     public static AIPaddle ai;
-    public static Ball ball;
+    public static SeizureBall ball;
     Random generator = new Random();
     InputHandler IH;
     Scanner Keyboard = new Scanner(System.in);
@@ -78,7 +78,7 @@ public class Game extends Canvas implements Runnable
 
         player = new PlayerPaddle(10, 60);
         ai = new AIPaddle(getWidth() - 20, 60);
-        ball = new Ball(getWidth() / 2, getHeight() / 2);
+        ball = new SeizureBall(getWidth() / 2, getHeight() / 2);
 
     }
 

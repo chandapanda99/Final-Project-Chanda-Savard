@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.params=x\ y
-comment0.target=NormalPlayerPaddle(int,\ int)
+comment0.target=SeizurePlayerTwo(int,\ int)
 comment1.params=game
-comment1.target=void\ tick(NormalGame)
+comment1.target=void\ tick(Game)
 comment2.params=game
-comment2.target=void\ tick(GameTwoPlayer)
+comment2.target=void\ tick(SeizureTwoPlayer)
 comment3.params=g
 comment3.target=void\ render(java.awt.Graphics)
 numComments=4
