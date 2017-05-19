@@ -66,7 +66,11 @@ public class SeizureBall
     public void tick(SeizureTwoPlayer game) 
     {
         boundingBox.setBounds(x, y, size, size);
-        if (x + size >= game.getWidth()) 
+        if (x <= 0) {
+            game.p2Score++;
+            vx = speed1;
+        }
+        else if (x + size >= game.getWidth()) 
         {
             game.p1Score++;
             vx = -speed;
@@ -97,7 +101,7 @@ public class SeizureBall
         }
     }
     
-    private void paddleCollide(SeizureTwoPlayer game) 
+    private void paddleCollide(SeizureTwoPlayer game)
     {
         if (boundingBox.intersects(game.player.boundingBox)) {
             vx = speed;

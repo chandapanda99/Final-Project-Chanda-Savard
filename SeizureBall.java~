@@ -71,6 +71,10 @@ public class SeizureBall
             game.p1Score++;
             vx = -speed;
         }
+        else if (x + size >= game.getWidth()) {
+            game.p1Score++;
+            vx = -speed1;
+        }
 
         if (y <= 0) 
         {
@@ -97,12 +101,12 @@ public class SeizureBall
         }
     }
     
-    private void paddleCollide(SeizureTwoPlayer game) 
+    private void paddleCollide(SeizureTwoPlayer game)
     {
         if (boundingBox.intersects(game.player.boundingBox)) {
             vx = speed;
         } 
-        else if (boundingBox.intersects(game.ai.boundingBox)) {
+        else if (boundingBox.intersects(game.player2.boundingBox)) {
             vx = -speed;
         }
     }

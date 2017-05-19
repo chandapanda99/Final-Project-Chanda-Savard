@@ -96,7 +96,8 @@ public class SeizureTwoPlayer extends Canvas implements Runnable
         }
         Graphics g = bs.getDrawGraphics();
 
-        g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
+        g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
+        g.fillRect(0, 0, getWidth(), getHeight());
 
         g.setColor(new Color(generator.nextInt(256), generator.nextInt(256), generator.nextInt(256)));
         
